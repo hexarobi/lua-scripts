@@ -27,7 +27,7 @@ end
 
 if vehiclelib.LIB_VERSION ~= VEHICLELIB_TARGET_VERSION then
     if SCRIPT_SOURCE == "MANUAL" then
-        log("jackzvehiclelib current: " .. vehiclelib.LIB_VERSION, ", target version: " .. VEHICLELIB_TARGET_VERSION)
+        util.log("jackzvehiclelib current: " .. vehiclelib.LIB_VERSION, ", target version: " .. VEHICLELIB_TARGET_VERSION)
         util.toast("Outdated vehiclelib library, downloading update...")
         download_lib_update("jackzvehiclelib.lua")
         vehiclelib = require("jackzvehiclelib")
@@ -508,7 +508,7 @@ menu.text_input(cloudSearchList, "Search", {"cbuildsearch"}, "Enter a search que
                 end)
             end
         else
-            log("invalid server response : " .. body, "_fetch_cloud_users")
+            util.log("invalid server response : " .. body, "_fetch_cloud_users")
             util.toast("Server returned invalid response")
         end
     end)
